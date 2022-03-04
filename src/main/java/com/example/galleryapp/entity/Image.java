@@ -19,14 +19,23 @@ public class Image {
     private String description;
     private String year;
     private String category;
+
+    @Lob
+    private String image;
+
     @Column(name = "price")
     private Integer price;
     @CreationTimestamp
     private Date dateCreated;
 
 
+    public String getImage() {
+        return image;
+    }
 
-
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public String getCategory() {
         return category;
@@ -91,13 +100,6 @@ public class Image {
         this.dateCreated = dateCreated;
     }
 
-    public String getDoctype() {
-        return doctype;
-    }
-
-    public void setDoctype(String doctype) {
-        this.doctype = doctype;
-    }
 
 
 }

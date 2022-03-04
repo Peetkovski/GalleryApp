@@ -9,19 +9,29 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
 public class MainGallery {
 
-    @Autowired
-    private ImageInterface imageInterface;
+    private final ImageInterface imageInterface;
+
+    private final ImageUploader imageUploader;
 
     @Autowired
-    private ImageUploader imageUploader;
+    public MainGallery(ImageInterface imageInterface, ImageUploader imageUploader) {
+        this.imageInterface = imageInterface;
+        this.imageUploader = imageUploader;
+    }
 
+    @PostMapping("/file")
+    public String saveObject(@RequestParam("url") String url,@RequestParam("name") String name, @RequestParam("price") Integer price,
+                             @RequestParam("description") String description, @RequestParam("year") String year, @RequestParam("category") String category) throws IOException {
 
-
+        imageUploader.saveObject(url, name, category ,price, description, year);
+        return "test";
+}
 
     @GetMapping("/gallery")
     public String showAllImages(Model model){
