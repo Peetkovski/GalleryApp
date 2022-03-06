@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/file" method="post">
+    <div class="custom-file mb-4">
+        <input type="text" name="url" class="custom-file-input"
+               id="url">
+    </div>
+    <!-- Name -->
+    <input type="text" name="name" id="name" class="form-control mb-4"
+           placeholder="Product Name">
+
+    <!-- Price -->
+    <input type="text" name="category" id="category" class="form-control mb-4"
+           placeholder="Category">
+
+    <!-- Price -->
+    <input type="number" name="price" id="price" class="form-control mb-4"
+           placeholder="Price">
+
+
+    <!-- Description -->
+    <input  id="description" name="description"
+              placeholder="Description">
+
+    <!-- Price -->
+    <input type="text" name="year" id="year" class="form-control mb-4"
+           placeholder="Year">
+
+
+
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block" type="submit">add</button>
+</form>
+
+</body>
+</html>
