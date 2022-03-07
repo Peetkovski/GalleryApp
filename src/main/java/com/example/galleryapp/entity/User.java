@@ -1,29 +1,29 @@
 package com.example.galleryapp.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
-@Entity
-@Builder
+@ToString
+@Getter
+@Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
+@Entity
+@Table
 public class User {
 
-    @GeneratedValue()
+    @GeneratedValue
     @Id
     @Column(name = "id")
     private Long id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "description")
-    private String description;
+    private String email;
 
 
-
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }
