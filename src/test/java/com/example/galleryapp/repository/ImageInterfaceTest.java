@@ -67,6 +67,7 @@ class ImageInterfaceTest {
     }
 
     @Test
+    @Disabled
     void willThrowExceptionImageAddNotFound(){
         Image image = new Image(
                 "Owczarek niemcki",

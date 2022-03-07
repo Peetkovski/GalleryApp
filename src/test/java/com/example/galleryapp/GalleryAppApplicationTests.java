@@ -13,33 +13,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 class GalleryAppApplicationTests {
 
-    @Mock
-    private UserInterface userInterface;
-
-    private UserService userService;
-
-
-    @BeforeEach
-    void setUp() {
-        userService = new UserService(userInterface);
-    }
-
-    @Test
-    void addUser(){
-
-        User user = new User(
-                "Tom",
-                "Tom@gmail.com"
-        );
-     userService.addUser(user);
-
-    }
-
-    @Test
-    void showUser(){
-
-
-        System.out.println( userInterface.findAll());
-    }
 
 }
